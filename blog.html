@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Borengy</title>
+    <link rel="stylesheet" href="blog-ozel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <nav>
+    <a href="index.html"><img src="logomark.svg" alt="Borengy" class="nav-logo"></a>
+    
+    <div class="nav-center">
+        <a href="kesfet.html">Keşfet</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+    </div>
+    
+    <a href="hakkimizda.html" class="nav-right">Hakkımızda</a>
+</nav>
+    </header>
+
+    <section class="blog-hero">
+        <img src="blog.jpg" alt="Borengy Blog" class="hero-img">
+        <div class="hero-overlay"></div>
+    </section>
+
+    <main class="blog-container">
+        <article class="blog-card-full">
+            <div class="card-image">
+                <img src="nefes.jpg" alt="Nefes Nedir?">
+            </div>
+            <div class="card-body">
+                <h2 class="post-title">Nefes Nedir?</h2>
+                <p class="post-intro">Doğru nefes almanın zihin üzerindeki etkilerini keşfedin.</p>
+                
+                <div class="post-full-content" id="content-1">
+                    <p>Nefes farkındalığı, zihindeki gürültüyü dindiren en güçlü araçtır. Borengy felsefesinde nefes, bir Varoluş eylemidir.</p>
+                    <p>Gün içinde çoğu zaman nefes aldığımızın bile farkında olmayız. Hızlı akan rutinler, ekranlar, bildirimler ve sürekli yetişme hissi; nefesimizi de zihnimiz gibi yüzeyselleştirir. Oysa nefesin ritmi değiştiğinde, zihnin ritmi de değişmeye başlar.</p>
+                    <p>Derin ve kontrollü bir nefes, bedeninize güvende olduğunuzu hatırlatır. Kalp atışınızı yavaşlatır, dikkatinizi ana toplar ve içinizde biriken yoğunluğu yavaşça çözmeye başlar. Bu yüzden nefes, yalnızca bir yaşam fonksiyonu değil; aynı zamanda bir farkındalık pratiğidir.</p>
+                    <p>Borengy’de nefes, bir başlangıç olarak görülür. Sessizliğe geçişin, zihinsel arınmanın ve kendinize yeniden yaklaşmanın ilk adımıdır. Bazen yalnızca birkaç bilinçli nefes bile günün ağırlığını hafifletmeye yeter.</p>
+                    <p>Çünkü bazı anlarda ihtiyaç duyduğumuz şey, daha fazlası değil; sadece gerçekten durabilmektir.</p>
+                </div>
+                
+                <a href="javascript:void(0)" class="read-more-link" onclick="toggleContent(1, this)">Devamını Oku...</a>
+            </div>
+        </article>
+
+        <article class="blog-card-full">
+            <div class="card-image">
+                <img src="zihin.jpg" alt="Zihin Neden Boş Duramaz?">
+            </div>
+            <div class="card-body">
+                <h2 class="post-title">Zihin Neden Boş Duramaz?</h2>
+                <p class="post-intro">Zihnin sürekli meşguliyet arayışının arkasındaki bilimsel gerçekler.</p>
+                
+                <div class="post-full-content" id="content-2">
+                    <p>Zihin, doğası gereği hareket etmeye eğilimlidir. Düşünmek, analiz etmek, hatırlamak ve olasılık üretmek beynin hayatta kalma mekanizmalarının bir parçasıdır. Bu yüzden sessizlikle baş başa kaldığımız anlarda bile zihnimiz çoğu zaman yeni bir uğraş, yeni bir düşünce ya da yeni bir dikkat noktası arar. Çünkü modern insan için durmak, çoğu zaman verimsizlikle eş anlamlı hale gelmiştir.</p>
+                    <p>Telefon ekranları, sürekli akan içerikler ve bitmeyen bildirimler zihni kısa süreli uyaranlara alıştırır. Birkaç saniyelik boşluk bile rahatsız edici hissettirebilir. Bu nedenle birçok insan sessiz kaldığında aslında ilk kez kendi iç sesini duymaya başlar. Ve bazen en zor şey, dış dünyadan değil, kendi zihnimizden uzaklaşamamaktır.</p>
+                    <p>Ancak zihni dinlendirmek, onu tamamen susturmak anlamına gelmez. Aksine; düşüncelerin geldiğini fark etmek, onları bastırmadan izlemek ve zihnin doğal akışına alan tanımaktır. Tıpkı gökyüzünden geçen bulutlar gibi… Bazıları yoğun, bazıları karanlık, bazıları ise kısa süreli. Hepsi gelir ve geçer.</p>
+                    <p>Borengy’de deneyimlenen dinginlik tam olarak bu farkındalık alanını yaratmayı amaçlar. İnsan, sürekli bir şey yapmak zorunda olmadığını hatırladığında zihinsel yük hafiflemeye başlar. Sessizlik ilk başta yabancı gelebilir; fakat zamanla insanın kendine yeniden yaklaşabildiği bir alan haline dönüşür.</p>
+                    <p>Çünkü bazen zihnin gerçekten ihtiyaç duyduğu şey, yeni bir uyaran değil; güvenle durabileceği bir boşluktur.</p>
+                </div>
+                
+                <a href="javascript:void(0)" class="read-more-link" onclick="toggleContent(2, this)">Devamını Oku...</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        // Akıllı Menü Sistemi
+        let lastScrollY = window.scrollY;
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                if (window.scrollY > lastScrollY) {
+                    header.classList.add('nav-hidden');
+                }
+            } else {
+                header.classList.remove('nav-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Devamını Oku Mekanizması
+        function toggleContent(id, el) {
+            const content = document.getElementById('content-' + id);
+            content.classList.toggle('visible');
+            el.innerText = content.classList.contains('visible') ? 'Daha Az Göster' : 'Devamını Oku...';
+        }
+    </script>
+</body>
+</html>

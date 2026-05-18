@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Borengy</title>
+    <link rel="stylesheet" href="iletisim-ozel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <nav>
+            <a href="index.html"><img src="logomark.svg" alt="Borengy" class="nav-logo"></a>
+            <div class="nav-center">
+                <a href="kesfet.html">Keşfet</a>
+                <a href="blog.html">Blog</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <a href="hakkimizda.html" class="nav-right">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <main class="contact-section">
+        <div class="contact-column info-side">
+            <div class="contact-info-block">
+                <span class="info-label">Telefon</span>
+                <a href="tel:+905550000000" class="info-value">+90 555 000 00 00</a>
+            </div>
+
+            <div class="contact-info-block">
+                <span class="info-label">Instagram</span>
+                <a href="#" class="info-value">@Borengy</a>
+            </div>
+
+            <div class="contact-info-block">
+                <span class="info-label">E-Mail</span>
+                <a href="mailto:hi@borengy.com" class="info-value">hi@borengy.com</a>
+            </div>
+
+            <div class="contact-info-block">
+                <span class="info-label">Adres</span>
+                <span class="info-value">İstanbul/Türkiye</span>
+            </div>
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="contact-column form-side">
+            <div id="form-container">
+                <h2 class="form-heading">Borengy Seni Arasın!</h2>
+                
+                <form class="contact-form" id="appointmentForm">
+                    <div class="input-wrapper">
+                        <label>AD:</label>
+                        <input type="text" id="firstName" placeholder="..." required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label>SOYAD:</label>
+                        <input type="text" id="lastName" placeholder="..." required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label>TELEFON:</label>
+                        <input type="tel" id="phone" placeholder="0..." maxlength="15" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" required>
+                    </div>
+
+                    <button type="submit" class="submit-trigger" id="submitBtn" disabled>Randevu Talep Et</button>
+                </form>
+            </div>
+
+            <div id="successCard" class="success-card">
+                <div class="success-icon">✓</div>
+                <h3>Randevunuz Oluşturulmuştur</h3>
+                <p>Borengy yolculuğu için ekibimiz sizinle en kısa sürede iletişime geçecektir.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- DEĞİŞKENLER ---
+        const header = document.querySelector('header');
+        const form = document.getElementById('appointmentForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const phoneInput = document.getElementById('phone');
+        const inputs = document.querySelectorAll('#appointmentForm input[required]');
+        const successCard = document.getElementById('successCard');
+        const formContainer = document.getElementById('form-container');
+        let lastScrollY = window.scrollY;
+
+        // --- 1. AKILLI MENÜ GİZLEME ---
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { 
+                if (window.scrollY > lastScrollY) {
+                    header.classList.add('nav-hidden');
+                } 
+            } else {
+                header.classList.remove('nav-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // --- 2. FORM DOĞRULAMA (11 RAKAM KONTROLÜ) ---
+        if (form) {
+            form.addEventListener('input', () => {
+                let allFilled = true;
+                
+                // Ad ve Soyad dolu mu?
+                inputs.forEach(input => {
+                    if (input.id !== 'phone') {
+                        if (!input.value.trim()) allFilled = false;
+                    }
+                });
+
+                // Telefon Kontrolü: Boşlukları sil, tam 11 rakam olmalı
+                const rawPhone = phoneInput.value.replace(/\s/g, ''); 
+                const isPhoneValid = rawPhone.length === 11;
+
+                if (allFilled && isPhoneValid) {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+                    submitBtn.style.cursor = "pointer";
+                } else {
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = "0.4";
+                    submitBtn.style.cursor = "not-allowed";
+                }
+            });
+
+            // Form Gönderimi (Onay Kartı)
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formContainer.style.opacity = "0";
+                formContainer.style.transition = "opacity 0.4s ease";
+                
+                setTimeout(() => {
+                    formContainer.style.display = "none";
+                    successCard.classList.add('show');
+                }, 400);
+            });
+        }
+    </script>
+</body>
+</html>

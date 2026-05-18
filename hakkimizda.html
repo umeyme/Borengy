@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | Borengy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <style>
+        /* Sayfa Özel Arka Plan ve Metin Renkleri */
+        body.about-page { 
+            background-color: #1c1c1c !important; /* Derin gece siyahı */
+            color: #F4F1EC !important; /* Fildişi yazı rengi */
+        }
+
+        .about-section {
+            padding: 200px 03% 120px 03%; 
+            max-width: 1000px; 
+            margin: 0 auto;
+        }
+
+        .about-title {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 300;
+            font-size: 3.5rem;
+            color: #F4F1EC;
+            line-height: 1;
+            margin-bottom: 50px;
+            letter-spacing: -1.5px;
+            text-transform: lowercase;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 300;
+            font-size: 1.05rem; 
+            line-height: 1.6;
+            color: #F4F1EC;
+            margin-bottom: 15px;
+            opacity: 0.85; /* Gözü yormaması için hafif şeffaflık */
+            text-align: justify;
+            letter-spacing: 0.2px;
+        }
+
+        .final-area {
+            margin-top: 60px;
+            border-top: 1px solid rgba(244, 241, 236, 0.15); /* İnce fildişi çizgi */
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .final-quote {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #F4F1EC;
+            opacity: 0.7;
+        }
+
+        /* --- KARANLIK SAYFA İÇİN MENÜ AYARI --- */
+        .about-page nav a { 
+            color: #F4F1EC !important; 
+        }
+
+        .about-page .nav-logo { 
+            filter: brightness(0) invert(1); /* Logo beyaza döner */
+        }
+
+        /* Menu üzerine gelince şerit yine insin */
+        .about-page header:hover .nav-bg-overlay {
+            top: 0 !important;
+        }
+
+        /* Şerit inince yazıların siyah olması (kontrast için) */
+        .about-page header:hover nav a {
+            color: #1c1c1c !important;
+        }
+
+        .about-page header:hover .nav-logo {
+            filter: brightness(0) invert(0) !important;
+        }
+    </style>
+</head>
+<body class="about-page">
+
+    <header>
+        <div class="nav-bg-overlay"></div>
+        <nav>
+            <div class="logo-side">
+                <a href="index.html"><img src="logomark.svg" alt="Borengy" class="nav-logo"></a>
+            </div>
+            <div class="nav-center">
+                <a href="kesfet.html">Keşfet</a>
+                <a href="blog.html">Blog</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <div class="hakkimizda-side">
+                <a href="hakkimizda.html">Hakkımızda</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-section">
+        <h1 class="about-title">hakkımızda</h1>
+        
+        <div class="about-content">
+            <p>
+                Borengy, modern yaşamın kesintisiz uyaran akışı içinde zihinsel olarak yavaşlayabilmen için tasarlanmış bütünsel bir deneyim alanıdır. 
+                Markanın çıkış noktası, günümüzde olumsuz görülen “sıkılma” hissine farklı bir yerden bakar. 
+                Borengy’e göre sıkılmak bir boşluk değil; düşüncenin, yaratıcılığın ve insanın kendisiyle yeniden karşılaşmasının başladığı alandır. 
+                Bu yüzden Borengy seni üretmeye ya da dönüşmeye zorlamaz. Sadece bunun mümkün olabileceği koşulları hazırlar.
+            </p>
+            <p>
+                Nefes çalışmalarıyla başlayan deneyim; tematik odalar, ses kompozisyonları ve bedensel ritüeller eşliğinde devam eder. 
+                Her alan, zihnin hızını azaltmak ve seni yeniden kendi ritmine yaklaştırmak için tasarlanmıştır.
+                Borengy’den ayrıldığında yanında yalnızca bir deneyim değil; kısa da olsa gerçekten durabildiğin, kendini duyabildiğin bir his kalır.
+            </p>
+
+            <div class="final-area">
+                <div class="final-quote">
+                    "Portakalı düşün. Sıkılmadan suyu çıkmaz. Sen de böylesin."
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

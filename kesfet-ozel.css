@@ -1,0 +1,176 @@
+/* --- FONT VE TEMEL AYARLAR --- */
+@font-face {
+    font-family: 'MoonTimeCustom';
+    src: url('fonts/moon-time.ttf') format('truetype');
+    font-weight: normal; 
+    font-style: normal; 
+    font-display: swap;
+}
+
+:root {
+    --still-night: #1C1C1C; 
+    --pause-ivory: #F4F1EC;
+    --brand-brown: #4A310D; 
+    --hero-rect: rgba(74, 49, 13, 0.62);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    background-color: var(--pause-ivory); 
+    font-family: 'Bodoni Moda', serif; 
+    color: var(--still-night);
+    line-height: 1.6;
+}
+
+/* --- AKILLI HEADER --- */
+header { 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    height: 100px; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center; 
+    background-color: transparent; 
+    transition: all 0.4s ease;
+}
+
+header.nav-hidden { 
+    transform: translateY(-100%); 
+    opacity: 0; 
+}
+
+header:hover { 
+    background-color: var(--pause-ivory); 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    padding: 0 60px;
+}
+
+.nav-center { 
+    display: flex; 
+    gap: 50px;
+}
+
+nav a { 
+    text-decoration: none; 
+    color: var(--still-night); 
+    font-size: 0.85rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+}
+
+.nav-logo { 
+    height: 95px; 
+    filter: brightness(0); 
+}
+
+/* --- KEŞFET HERO (VİDEO) --- */
+.explore-hero { 
+    height: 60vh; 
+    width: 100%; 
+    overflow: hidden; 
+    position: relative;
+}
+
+.explore-hero video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+/* --- İÇERİK YAPISI --- */
+.explore-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 100px 20px;
+}
+
+.room-row { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 150px; 
+    gap: 80px;
+}
+
+.row-reverse { 
+    flex-direction: row-reverse;
+}
+
+/* Görsel Çerçevesi */
+.image-frame { 
+    flex: 1.2; 
+    padding: 15px;
+    border: 1px solid rgba(74, 49, 13, 0.2); 
+    border-radius: 2px;
+}
+
+.image-frame img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    transition: transform 1.2s ease; 
+}
+
+.text-frame { 
+    flex: 1;
+}
+
+/* --- BODONI BAŞLIKLAR (Dengeli ve Türkçe Karakter Uyumlu) --- */
+.script-title { 
+    font-family: 'Bodoni Moda', serif; 
+    font-size: 2.8rem; 
+    font-weight: 400; 
+    text-transform: none; 
+    letter-spacing: 6px; 
+    color: var(--brand-brown); 
+    margin-bottom: 15px; 
+    line-height: 1.1;
+}
+
+.bodoni-sub { 
+    font-family: 'Bodoni Moda', serif; 
+    font-style: italic; 
+    font-size: 1.1rem; 
+    color: var(--still-night); 
+    margin-bottom: 30px; 
+    opacity: 0.8;
+}
+
+/* Metin Düzeni (Sola Yaslı, İçten Başlama Yok) */
+.room-content p { 
+    font-size: 1rem; 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+    text-align: left; 
+    text-indent: 0;   
+    color: #333;
+}
+
+/* --- MOBİL UYUMLULUK --- */
+@media (max-width: 968px) {
+    .room-row, .row-reverse { 
+        flex-direction: column; 
+        gap: 40px; 
+    }
+    .script-title { 
+        font-size: 2.2rem; 
+        letter-spacing: 4px; 
+    }
+}

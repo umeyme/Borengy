@@ -1,0 +1,89 @@
+/* --- FONT VE TEMEL AYARLAR --- */
+@font-face {
+    font-family: 'MoonTimeCustom';
+    src: url('fonts/moon-time.ttf') format('truetype');
+    font-weight: normal; 
+    font-style: normal; 
+    font-display: swap;
+}
+
+:root {
+    --still-night: #1C1C1C; 
+    --pause-ivory: #F4F1EC;
+    --brand-brown: #4A310D; 
+    --hero-rect: rgba(74, 49, 13, 0.62);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+html { 
+    scroll-behavior: smooth; 
+    overflow: hidden; /* Sayfanın aşağı kaymasını engeller */
+}
+
+body { 
+    background-color: var(--pause-ivory); 
+    font-family: 'Bodoni Moda', serif; 
+    height: 100vh;
+}
+
+/* --- BÜTÜNLEŞİK AKILLI HEADER --- */
+header { 
+    position: fixed; top: 0; width: 100%; height: 100px; z-index: 1000; 
+    display: flex; align-items: center; background-color: transparent; 
+    transform: translateY(0); opacity: 1;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.4s ease, opacity 0.4s ease;
+}
+
+header.nav-hidden { transform: translateY(-100%) !important; opacity: 0 !important; }
+
+header:hover { 
+    transform: translateY(0) !important; 
+    opacity: 1 !important; 
+    background-color: var(--pause-ivory) !important; 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08); 
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 60px; }
+.nav-center { display: flex; gap: 50px; }
+
+nav a { 
+    text-decoration: none; 
+    color: white; 
+    font-size: 0.85rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    transition: color 0.3s ease; 
+    white-space: nowrap; 
+}
+
+header:hover nav a { color: var(--still-night) !important; }
+
+.nav-logo { height: 95px; width: auto; transition: filter 0.4s ease; filter: brightness(0) invert(1); }
+header:hover .nav-logo { filter: brightness(0) invert(0) !important; }
+
+/* --- HERO BÖLÜMÜ --- */
+.section { height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+
+.hero { background-image: url('background1.jpg'); background-size: cover; background-position: center; }
+.hero-overlay { position: absolute; inset: 0; background-color: var(--hero-rect); z-index: 1; }
+.hero-content { position: relative; z-index: 2; text-align: center; }
+
+/* Ana Logo Boyutu */
+.main-logo { 
+    width: 300px; 
+    margin: 0 auto -15px auto; 
+    filter: brightness(0) invert(1); 
+    display: block; 
+}
+
+/* Slogan Metni (Dur. Hisset. Var Ol.) */
+.moon-time { 
+    font-family: 'MoonTimeCustom', cursive; 
+    font-weight: 400; 
+    color: #D8CBB8; 
+    font-size: 2 rem; 
+    letter-spacing: 1px; 
+    line-height: 2; 
+    margin-top: 0;
+}

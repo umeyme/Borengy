@@ -1,0 +1,97 @@
+/* --- DEĞİŞKENLER VE TEMEL --- */
+:root {
+    --still-night: #1C1C1C;
+    --pause-ivory: #F4F1EC;
+    --brand-brown: #4A310D;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+body { 
+    background-color: #f9f7f4; 
+    font-family: 'Bodoni Moda', serif; 
+    color: var(--still-night); 
+    line-height: 1.6;
+}
+
+/* --- AKILLI KOYU HEADER --- */
+header {
+    position: fixed; top: 0; width: 100%; height: 100px; z-index: 1000;
+    display: flex; align-items: center; 
+    background-color: var(--still-night);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
+}
+
+header.nav-hidden { transform: translateY(-100%); opacity: 0; }
+header:hover { transform: translateY(0) !important; opacity: 1 !important; }
+
+header::before {
+    content: ""; position: absolute; top: 100%; left: 0; width: 100%; height: 60px; background: transparent;
+}
+
+nav { 
+    display: flex; justify-content: space-between; align-items: center; 
+    width: 100%; padding: 0 60px; 
+}
+
+.nav-center { display: flex; gap: 50px; }
+
+nav a { 
+    text-decoration: none; 
+    color: var(--pause-ivory); 
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; 
+    white-space: nowrap; transition: opacity 0.3s;
+}
+
+.nav-logo { 
+    height: 95px; width: auto; 
+    filter: brightness(0) invert(1);
+}
+
+/* --- BLOG HERO --- */
+.blog-hero {
+    height: 80vh; width: 100%; position: relative; overflow: hidden;
+}
+.hero-img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.1); }
+
+/* --- BLOG İÇERİK (GÜNCELLENEN KISIM) --- */
+.blog-container { 
+    max-width: 1000px; margin: 80px auto; padding: 0 20px; 
+}
+
+.blog-card-full {
+    background: white; margin-bottom: 100px; width: 100%;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.03);
+    border-bottom: 8px solid var(--brand-brown);
+}
+
+/* GÖRSELİ YATAY YAPAN AYAR */
+.card-image img { 
+    width: 100%; 
+    height: 450px; /* Dikeyden Yataya çektik (Anasayfa oranı) */
+    object-fit: cover; /* Görseli ezmeden alanı doldurur */
+    object-position: center; /* Kırparken ortayı baz alır */
+    display: block; 
+}
+
+.card-body { padding: 60px; }
+
+.post-title { font-size: 3.5rem; color: var(--brand-brown); margin-bottom: 15px; font-weight: 400; }
+
+.post-intro { font-size: 1.4rem; color: #777; font-style: italic; margin-bottom: 25px; }
+
+.read-more-link {
+    display: inline-block; color: var(--brand-brown); text-decoration: none; 
+    font-weight: bold; font-size: 1.1rem; margin-top: 10px;
+}
+
+/* --- DEVAMINI OKU ANİMASYONU --- */
+.post-full-content {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.post-full-content.visible {
+    max-height: 1500px; opacity: 1; margin-top: 30px;
+}
+.post-full-content p { line-height: 1.8; font-size: 1.15rem; color: #444; margin-bottom: 15px; text-align: justify; }

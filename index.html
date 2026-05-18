@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr" class="home-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borengy | Dur. Hisset. Var Ol.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="logomark.svg" alt="Borengy" class="nav-logo"></a>
+            <div class="nav-center">
+                <a href="kesfet.html">Keşfet</a>
+                <a href="blog.html">Blog</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <a href="hakkimizda.html" class="nav-right">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="section hero" id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img src="logo.svg" alt="Borengy" class="main-logo">
+                <h1 class="moon-time">Dur. Hisset. Var Ol.</h1>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                if (window.scrollY > lastScrollY) {
+                    header.classList.add('nav-hidden');
+                }
+            } else {
+                header.classList.remove('nav-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+</html>

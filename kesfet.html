@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keşfet | Borengy</title>
+    <link rel="stylesheet" href="kesfet-ozel.css">
+    <link href="https://fonts.googleapis.com/css?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="nav-bg-overlay"></div>
+        <nav>
+            <a href="index.html"><img src="logomark.svg" alt="Borengy" class="nav-logo"></a>
+            <div class="nav-center">
+                <a href="kesfet.html">Keşfet</a>
+                <a href="blog.html">Blog</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <a href="hakkimizda.html" class="nav-right">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <section class="explore-hero">
+        <video autoplay muted loop playsinline>
+            <source src="borengy-explore.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <main class="explore-container">
+        <div class="room-row" id="denge-odasi">
+            <div class="image-frame"><img src="denge.jpg" alt="Denge"></div>
+            <div class="text-frame">
+                <h1 class="script-title">Denge</h1>
+                <h2 class="bodoni-sub">Zihninin bazen susmayı unutabilir.</h2>
+                <div class="room-content">
+                    <p>Düşünceler üst üste birikir, beden gün boyunca taşıdığı gerginliği bırakmakta zorlanır. Denge odası, tam da bu yoğunluğun içinde yavaşlayabilmen için tasarlandı.</p>
+                    <p>İçeri adım attığında seni toprak tonlarının sakinliği karşılar. Terracotta, bej ve doğal yüzeyler bedenin güven hissini yeniden hatırlamasına yardımcı olurken, odanın merkezinde yer alan Akik taşı deneyimin merkezinde sessizce var olur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-row row-reverse" id="akis-odasi">
+            <div class="image-frame"><img src="akis.jpg" alt="Akış"></div>
+            <div class="text-frame">
+                <h1 class="script-title">Akış</h1>
+                <h2 class="bodoni-sub">Bazen zihnin durmaz değil, başlayamaz.</h2>
+                <div class="room-content">
+                    <p>Düşünceler vardır ama hareket etmez; üretme isteği yerini sıkışmışlık hissine bırakır. Akış odası, tam da bu tıkanıklığın içinde zihinsel alan açabilmen için tasarlandı.</p>
+                    <p>İçeri adım attığında seni sarı ve yeşil tonlarının dengeli atmosferi karşılar. Gün ışığını hatırlatan sıcak sarılar yaratıcı enerjiyi desteklerken, doğal yeşil tonları zihne nefes alan sakin bir alan hissi kazandırır.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-row" id="arinma-odasi">
+            <div class="image-frame"><img src="arinma.jpg" alt="Arınma"></div>
+            <div class="text-frame">
+                <h1 class="script-title">Arınma</h1>
+                <h2 class="bodoni-sub">Bazen insan ne düşündüğünü değil, ne hissettiğini kaybeder.</h2>
+                <div class="room-content">
+                    <p>İç ses bulanıklaşır, zihnin içindeki gürültü duyguların önüne geçer. Arınma odası, tüm bu yoğunluğun içinden sıyrılıp yeniden kendine yaklaşabilmen için tasarlandı.</p>
+                    <p>İçeri adım attığında seni beyaz ve yumuşak lavanta tonlarının sade atmosferi karşılar. Minimal yüzeyler, hafif ışık geçişleri ve sessiz boşluk hissi zihni yavaşça dış dünyanın ağırlığından uzaklaştırır.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                if (window.scrollY > lastScrollY) {
+                    header.classList.add('nav-hidden');
+                }
+            } else {
+                header.classList.remove('nav-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+</html>
